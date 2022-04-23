@@ -12,7 +12,7 @@ class AnagramGenerator:
         with open(path, "r") as f:
             for word in f.readlines():
                 word = self.clean_word(word)
-                if len(word) > self.min_word_length:
+                if len(word) >= self.min_word_length:
                     self.load_letters(word)
 
     def load_letters(self, word):
