@@ -1,6 +1,7 @@
 import anagram_generator
 import pytest
 
+
 @pytest.fixture
 def new_anagram_generator():
     return anagram_generator.AnagramGenerator()
