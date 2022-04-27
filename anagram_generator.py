@@ -20,7 +20,7 @@ class AnagramGenerator:
         for index, letter in enumerate(word):
             if letter not in node.children:
                 node.children[letter] = AnagramNode(
-                    letter=letter, depth=node.depth + 1, leaf=(index == len(word) - 1)
+                    letter=letter, depth=node.depth + 1, word_end=(index == len(word) - 1)
                 )
             node = node.children[letter]
 
@@ -34,7 +34,7 @@ class AnagramGenerator:
             print(anagram)
 
     def generate_anagram_helper(self, letter_count, builder, node, target_length):
-        if node.leaf:
+        if node.word_end:
             if len([x for x in builder if x != " "]) >= target_length:
                 yield "".join(builder)
             builder.append(" ")
@@ -63,8 +63,8 @@ class AnagramGenerator:
 
 
 class AnagramNode:
-    def __init__(self, letter="", depth=0, leaf=False):
+    def __init__(self, letter="", depth=0, word_end=False):
         self.letter = letter
         self.depth = depth
-        self.leaf = leaf
+        self.word_end = word_end
         self.children = {}
