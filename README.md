@@ -1,9 +1,7 @@
 # Anagram Finder
-An anagram finder to find anagrams of a given input.
+A fast anagram finder to find anagrams of a given input using a trie!
 
-Open up main.py and hit run in your IDE!
-
-(or run ```python main.py``` in a terminal)
+Run through main.py
 
 words_alpha.txt has more (and crazier) words. Source: https://github.com/dwyl/english-words
 
